@@ -2,7 +2,7 @@
 
 //////////////////////////////////////////////////////////////
 //===========================================================
-// mods.php(For individual softwares)
+// mods.php(For inDivi_Themedual softwares)
 //===========================================================
 // SOFTACULOUS 
 // Version : 1.0
@@ -158,7 +158,7 @@ function __post_mod_install(){
 		}
 	}
 
-	//Check which Divi Theme is checked for installation
+	//Check which Divi_Theme Theme is checked for installation
 	if(!empty($__settings['Divi_Theme'])){
 
 		$filename = '';
@@ -168,7 +168,7 @@ function __post_mod_install(){
 		if($__settings['Divi_Theme'] == "none"){
 			$Divi_Theme = false;
 		}else{
-			$filename = $__settings['Divi_Theme'].'.zip';
+			$filename = 'Divi.zip';
 		}
 
 		if($Divi_Theme){
@@ -182,13 +182,13 @@ function __post_mod_install(){
 		
 			//Activate themes in WP database
 			$query = "UPDATE ".$__settings['dbprefix']."options SET 
-						option_value = 'genesis'
+						option_value = 'Divi'
 						WHERE option_name = 'template';";
 									
 			$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);
 			
 			$query = "UPDATE ".$__settings['dbprefix']."options SET 
-						option_value = '".$__settings['Divi_Theme']."'
+						option_value = 'Divi'
 						WHERE option_name = 'stylesheet';";
 
 			$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);
