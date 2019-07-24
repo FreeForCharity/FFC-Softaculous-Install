@@ -1,0 +1,97 @@
+<softinstall xmlns="http://www.softaculous.com">
+	<settings>
+		<group>
+			<heading>Activate WPMUDev</heading>
+				<input type="checkbox" name="WPMUDev_Plugins" value="on">
+					<head>Check to activate WPMUDev plugins</head>
+				</input>
+		</group>
+		<group>
+			<heading>Choose Free for Charity Theme</heading>
+			<input type="select">
+				<select name="install_theme">
+					<option value="academy-pro">Academy</option>
+					<option value="altitude-pro">Altitude</option>
+					<option value="atmosphere-pro">Atmosphere</option>
+					<option value="authority-pro">Authority</option>
+					<option value="breakthrough-pro">Breakthrough</option>
+					<option value="cafe-pro">Cafe</option>
+					<option value="education-pro">Education</option>
+					<option value="essence-pro">Essence</option>
+					<option value="infinity-pro">Infinity</option>
+					<option value="agency-pro">Agency</option>
+					<option value="agentpress-pro">Agentpress</option>
+					<option value="author-pro">Author</option>
+					<option value="centric-pro">Centric</option>
+					<option value="daily-dish-pro">Daily Dish</option>
+					<option value="digital-pro">Digital</option>
+					<option value="eleven40-pro">Eleven40</option>
+					<option value="enterprise-pro">Enterprise</option>
+					<option value="executive-pro">Executive</option>
+					<option value="focus-pro">Focus</option>
+					<option value="magazine-pro">Magazine</option>
+					<option value="metro-pro">Metro</option>
+					<option value="modern-portfolio-pro">Modern Portfolio</option>
+					<option value="monochrome-pro">Monochrome</option>
+					<option value="news-pro">News</option>
+					<option value="outfitter-pro">Outfitter</option>
+					<option value="parallax-pro">Parallax</option>
+					<option value="ambiance-pro">Ambiance</option>
+					<option value="apparition">Apparition</option>
+					<option value="beautiful-pro">Beautiful</option>
+					<option value="generate-pro">Generate</option>
+					<option value="interior-pro">Interior</option>
+					<option value="lifestyle-pro">Lifestyle</option>
+					<option value="minimum-pro">Minimum</option>
+					<option value="modern-studio-pro">Modern Studio</option>
+					<option value="no-sidebar-pro">No Sidebar</option>
+					<option value="outreach-pro">Outreach</option>
+					<option value="remobile-pro">Remobile</option>
+					<option value="sixteen-nine-pro">Sixteen Nine</option>
+					<option value="smart-passive-income-pro">Smart Passive Income</option>
+					<option value="streamline-pro">Streamline</option>
+					<option value="the-411-pro">The 411</option>
+					<option value="wellness-pro">Wellness</option>
+					<option value="whitespace-pro">Whitespace</option>
+					<option value="wintersong-pro">Wintersong</option>
+					<option value="workstation-pro">Workstation</option>
+					<option value="associate">Associate</option>
+					<option value="backcountry">Backcountry</option>
+					<option value="balance">Balance</option>
+					<option value="beecrafty">Beecrafty</option>
+					<option value="blissful">Blissful</option>
+					<option value="crystal">Crystal</option>
+					<option value="decor">Decor</option>
+					<option value="delicious">Delicious</option>
+					<option value="fabric">Fabric</option>
+					<option value="familytree">Familytree</option>
+					<option value="freelance">Freelance</option>
+					<option value="landscape">Landscape</option>
+					<option value="lexicon">Lexicon</option>
+					<option value="luscious">Luscious</option>
+					<option value="manhattan">Manhattan</option>
+					<option value="metric">Metric</option>
+					<option value="midnight">Midnight</option>
+					<option value="mindstream">Mindstream</option>
+					<option value="mocha">Mocha</option>
+					<option value="nitrous">Nitrous</option>
+					<option value="pixelhappy">Pixelhappy</option>
+					<option value="platinum">Platinum</option>
+					<option value="pretty">Pretty</option>
+					<option value="pretty-pictures">Pretty Pictures</option>
+					<option value="prose">Prose</option>
+					<option value="quattro">Quattro</option>
+					<option value="scribble">Scribble</option>
+					<option value="serenity">Serenity</option>
+					<option value="sleek">Sleek</option>
+					<option value="socialeyes">Socialeyes</option>
+					<option value="stretch">Stretch</option>
+					<option value="tapestry">Tapestry</option>
+					<option value="venture">Venture</option>
+					<option value="none">None</option>
+				</select>
+				<head>Choose a Theme from Free for Charity</head>
+			</input>
+		</group>
+	</settings>
+</softinstall>

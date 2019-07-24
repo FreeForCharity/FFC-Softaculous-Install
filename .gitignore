@@ -1,0 +1,24 @@
+#Project Specific ignores
+
+config.ini
+/plugins/
+/themes/
+
+# Created by https://www.gitignore.io/api/compressed
+# Edit at https://www.gitignore.io/?templates=compressed
+
+### Compressed ###
+*.7z
+*.deb
+*.gz
+*.pkg
+*.rar
+*.rpm
+*.sit
+*.sitx
+*.tar
+*.zip
+*.zipx
+*.tgz
+
+# End of https://www.gitignore.io/api/compressed
