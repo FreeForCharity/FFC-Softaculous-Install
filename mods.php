@@ -111,20 +111,21 @@ function __post_mod_install(){
 	}else{
 		$error[] = "WPMU Dev API key not found!";
 	}
-	// Check which plugin is checked for installation
-	if(!empty($__settings['install_theme'])){
+	
+	// Check which studiopress theme is checked for installation
+	if(!empty($__settings['StudioPress_Theme'])){
 
 		$filename = '';
-		$install_theme = true;
+		$StudioPress_Theme = true;
 		
 		//Get selected theme
-		if($__settings['install_theme'] == "none"){
-			$install_theme = false;
+		if($__settings['StudioPress_Theme'] == "none"){
+			$StudioPress_Theme = false;
 		}else{
-			$filename = $__settings['install_theme'].'.zip';
+			$filename = $__settings['StudioPress_Theme'].'.zip';
 		}
 
-		if($install_theme){
+		if($StudioPress_Theme){
 			//Unzip Genesis parent theme, and selected child theme
 			if(file_exists($globals['path'].'/conf/mods/'.$software['softname'].'/themes/genesis.2.6.1.zip')){
 				if(!sunzip($globals['path'].'/conf/mods/'.$software['softname'].'/themes/genesis.2.6.1.zip', $__settings['softpath'].'/wp-content/themes/')){
@@ -150,7 +151,44 @@ function __post_mod_install(){
 			$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);
 			
 			$query = "UPDATE ".$__settings['dbprefix']."options SET 
-						option_value = '".$__settings['install_theme']."'
+						option_value = '".$__settings['StudioPress_Theme']."'
+						WHERE option_name = 'stylesheet';";
+
+			$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);
+		}
+	}
+
+	//Check which Divi Theme is checked for installation
+	if(!empty($__settings['Divi_Theme'])){
+
+		$filename = '';
+		$Divi_Theme = true;
+		
+		//Get selected theme
+		if($__settings['Divi_Theme'] == "none"){
+			$Divi_Theme = false;
+		}else{
+			$filename = $__settings['Divi_Theme'].'.zip';
+		}
+
+		if($Divi_Theme){
+			if(file_exists($globals['path'].'/conf/mods/'.$software['softname'].'/themes/'.$filename)){
+				if(!sunzip($globals['path'].'/conf/mods/'.$software['softname'].'/themes/'.$filename, $__settings['softpath'].'/wp-content/themes/')){
+					$error[] = 'could not unzip the plugin files - '.$filename;
+				}
+			}else{
+				$error[] = 'File does not exist - '.$filename;
+			}
+		
+			//Activate themes in WP database
+			$query = "UPDATE ".$__settings['dbprefix']."options SET 
+						option_value = 'genesis'
+						WHERE option_name = 'template';";
+									
+			$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);
+			
+			$query = "UPDATE ".$__settings['dbprefix']."options SET 
+						option_value = '".$__settings['Divi_Theme']."'
 						WHERE option_name = 'stylesheet';";
 
 			$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);

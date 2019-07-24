@@ -7,9 +7,9 @@
 				</input>
 		</group>
 		<group>
-			<heading>Choose Free for Charity Theme</heading>
+			<heading>Choose StudioPress Theme</heading>
 			<input type="select">
-				<select name="install_theme">
+				<select name="StudioPress_Theme">
 					<option value="academy-pro">Academy</option>
 					<option value="altitude-pro">Altitude</option>
 					<option value="atmosphere-pro">Atmosphere</option>
@@ -90,7 +90,16 @@
 					<option value="venture">Venture</option>
 					<option value="none">None</option>
 				</select>
-				<head>Choose a Theme from Free for Charity</head>
+				<head>Choose a Theme from StudioPress</head>
+			</input>
+		</group>
+		<group>
+			<heading>Choose a Divi Theme</heading>
+			<input type="select">
+				<select name="Divi_Theme">
+					<option value="Divi">Divi</option>
+				</select>
+				<head>Choose a Theme from Divi</head>
 			</input>
 		</group>
 	</settings>
