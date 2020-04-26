@@ -98,6 +98,7 @@
 			<input type="select">
 				<select name="Divi_Theme">
 					<option value="Divi">Divi</option>
+					<option value="none">None</option>
 				</select>
 				<head>Choose a Theme from Divi</head>
 			</input>

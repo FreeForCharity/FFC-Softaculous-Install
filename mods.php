@@ -111,6 +111,18 @@ function __post_mod_install(){
 	}else{
 		$error[] = "WPMU Dev API key not found!";
 	}
+
+	if(empty($scriptSettings['DIVI_Settings']['Username'])){
+		$error[] = "No Username Found!";
+	}
+
+	if(empty($scriptSettings['DIVI_Settings']['API_KEY'])){
+		$error[] = "No API Key Found!";
+	}else{
+		if(strlen($scriptSettings['DIVI_Settings']['API_KEY']) !== 40){
+			$error[] = "Divi API key is too short!";
+		}
+	}
 	
 	// Check which studiopress theme is checked for installation
 	if(!empty($__settings['StudioPress_Theme'])){
@@ -192,6 +204,34 @@ function __post_mod_install(){
 						WHERE option_name = 'stylesheet';";
 
 			$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);
+
+			/*
+			$Login[firstPrompt] = "\"username\";";
+
+			$Login[UsernameSize] = "s:".strlen($scriptSettings['DIVI_Settings']['Username']).":";
+			$Login[Username] = "\"".$scriptSettings['DIVI_Settings']['Username']."\";";
+
+			$Login[secondPromptSize] = "s:7:";
+			$Login[secondPrompt] = "\"api_key\";";
+
+			$Login[ApiKeySize] = "s:40:";
+			$Login[ApiKey] = "\"".$scriptSettings['DIVI_Settings']['API_KEY']."\"";
+			*/
+
+			$query = "INSERT INTO ";
+			$query .= $__settings['dbprefix']."options";
+			$query .= " (option_name, option_value)";
+			$query .= " VALUES ('et_automatic_updates_options'";
+			$query .= ', a:2:{s:8:\"username\";s:';
+			$query .= strlen($scriptSettings['DIVI_Settings']['Username']);
+			$query .=  "\"".$scriptSettings['DIVI_Settings']['Username']."\";";
+			$query .= "s:7:\"api_key\";s:40:";
+			$query .= "\"".$scriptSettings['DIVI_Settings']['API_KEY']."\"";
+
+			//$query = "INSERT INTO ".$__settings['dbprefix']."options (option_name, option_value) VALUES ('automatic_updates_options', $Login , ('wdp_un_limit_to_user', '1');";
+			$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);
+
+
 		}
 	}
 
